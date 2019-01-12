@@ -18,9 +18,11 @@ class SolutionsTests {
 
 		// when
 		var noDivisorsNaive = new NaiveSolution().apply(noDivisors, limit);
+		var noDivisorsOptimal = new OptimalSolution().apply(noDivisors, limit);
 
 		// then
 		assertThat(noDivisorsNaive, is(OptionalInt.empty()));
+		assertThat(noDivisorsOptimal, is(OptionalInt.empty()));
 	}
 
 	@Test
@@ -32,11 +34,15 @@ class SolutionsTests {
 
 		// when
 		var negativeDivisorNaive = new NaiveSolution().apply(negativeDivisor, limit);
+		var negativeDivisorOptimal = new OptimalSolution().apply(negativeDivisor, limit);
 		var zeroDivisorNaive = new NaiveSolution().apply(zeroDivisor, limit);
+		var zeroDivisorOptimal = new OptimalSolution().apply(zeroDivisor, limit);
 
 		// then
 		assertThat(negativeDivisorNaive, is(OptionalInt.empty()));
+		assertThat(negativeDivisorOptimal, is(OptionalInt.empty()));
 		assertThat(zeroDivisorNaive, is(OptionalInt.empty()));
+		assertThat(zeroDivisorOptimal, is(OptionalInt.empty()));
 	}
 
 	@Test
@@ -48,11 +54,15 @@ class SolutionsTests {
 
 		// when
 		var negativeLimitNaive = new NaiveSolution().apply(divisors, negativeLimit);
+		var negativeLimitOptimal = new OptimalSolution().apply(divisors, negativeLimit);
 		var zeroLimitNaive = new NaiveSolution().apply(divisors, zeroLimit);
+		var zeroLimitOptimal = new OptimalSolution().apply(divisors, zeroLimit);
 
 		// then
 		assertThat(negativeLimitNaive, is(OptionalInt.empty()));
+		assertThat(negativeLimitOptimal, is(OptionalInt.empty()));
 		assertThat(zeroLimitNaive, is(OptionalInt.empty()));
+		assertThat(zeroLimitOptimal, is(OptionalInt.empty()));
 	}
 
 	@Test
@@ -63,8 +73,10 @@ class SolutionsTests {
 
 		// when
 		var naiveSolution = new NaiveSolution().apply(divisors, limit);
+		var optimalSolution = new OptimalSolution().apply(divisors, limit);
 
 		// then
 		assertThat(naiveSolution, is(equalTo(OptionalInt.of(23))));
+		assertThat(optimalSolution, is(equalTo(OptionalInt.of(23))));
 	}
 }

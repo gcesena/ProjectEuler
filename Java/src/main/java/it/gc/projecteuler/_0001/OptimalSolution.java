@@ -5,7 +5,7 @@ import java.util.Set;
 
 import static it.gc.projecteuler._0001.Solution.isValid;
 
-public class NaiveSolution implements Solution {
+public class OptimalSolution implements Solution {
 	@Override
 	public OptionalInt apply(Set<Integer> divisors, int limit) {
 		if (!isValid(divisors, limit)) return OptionalInt.empty();
@@ -17,19 +17,19 @@ public class NaiveSolution implements Solution {
 	private static int apply(int[] divisors, int limit) {
 		var sum = 0;
 
-		for (var i = 1; i < limit; i++) {
-			var found = false;
+		for (var i = 0; i < divisors.length; i++) {
+			sum += apply(divisors[i], limit);
 
-			for (var j = 0; (j < divisors.length) && !found; j++) {
-				var divisor = divisors[j];
-
-				if (i % divisor == 0) {
-					sum += i;
-					found = true;
-				}
+			for (var j = i + 1; j < divisors.length; j++) {
+				sum -= apply(divisors[i] * divisors[j], limit);
 			}
 		}
 
 		return sum;
+	}
+
+	private static int apply(int divisor, int limit) {
+		var p = (limit - 1) / divisor;
+		return (divisor * p * (p + 1)) / 2;
 	}
 }

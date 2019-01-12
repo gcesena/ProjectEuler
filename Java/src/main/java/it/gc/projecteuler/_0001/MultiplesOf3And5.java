@@ -6,7 +6,7 @@ public class MultiplesOf3And5 {
 	public static void main(String[] args) {
 		var divisors = Set.of(3, 5);
 		var limit = 1000;
-		var algorithm = new NaiveSolution();
+		var algorithm = new OptimalSolution();
 
 		System.out.println(algorithm.apply(divisors, limit));
 	}
