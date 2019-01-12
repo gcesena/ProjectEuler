@@ -66,6 +66,36 @@ class SolutionsTests {
 	}
 
 	@Test
+	void multiplesOf1Below1() {
+		// given
+		var divisors = Set.of(1);
+		var limit = 1;
+
+		// when
+		var naiveSolution = new NaiveSolution().apply(divisors, limit);
+		var optimalSolution = new OptimalSolution().apply(divisors, limit);
+
+		// then
+		assertThat(naiveSolution, is(equalTo(OptionalInt.of(0))));
+		assertThat(optimalSolution, is(equalTo(OptionalInt.of(0))));
+	}
+
+	@Test
+	void multiplesOf1Below2() {
+		// given
+		var divisors = Set.of(1);
+		var limit = 2;
+
+		// when
+		var naiveSolution = new NaiveSolution().apply(divisors, limit);
+		var optimalSolution = new OptimalSolution().apply(divisors, limit);
+
+		// then
+		assertThat(naiveSolution, is(equalTo(OptionalInt.of(1))));
+		assertThat(optimalSolution, is(equalTo(OptionalInt.of(1))));
+	}
+
+	@Test
 	void multiplesOf3And5Below10() {
 		// given
 		var divisors = Set.of(3, 5);
