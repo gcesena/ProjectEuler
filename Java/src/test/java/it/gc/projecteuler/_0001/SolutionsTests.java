@@ -10,6 +10,9 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 class SolutionsTests {
+	private final Solution naiveAlgorithm = new NaiveSolution();
+	private final Solution optimalAlgorithm = new OptimalSolution();
+	
 	@Test
 	void noDivisors() {
 		// given
@@ -17,8 +20,8 @@ class SolutionsTests {
 		var limit = 10;
 
 		// when
-		var noDivisorsNaive = new NaiveSolution().apply(noDivisors, limit);
-		var noDivisorsOptimal = new OptimalSolution().apply(noDivisors, limit);
+		var noDivisorsNaive = naiveAlgorithm.apply(noDivisors, limit);
+		var noDivisorsOptimal = optimalAlgorithm.apply(noDivisors, limit);
 
 		// then
 		assertThat(noDivisorsNaive, is(OptionalInt.empty()));
@@ -33,10 +36,10 @@ class SolutionsTests {
 		var limit = 10;
 
 		// when
-		var negativeDivisorNaive = new NaiveSolution().apply(negativeDivisor, limit);
-		var negativeDivisorOptimal = new OptimalSolution().apply(negativeDivisor, limit);
-		var zeroDivisorNaive = new NaiveSolution().apply(zeroDivisor, limit);
-		var zeroDivisorOptimal = new OptimalSolution().apply(zeroDivisor, limit);
+		var negativeDivisorNaive = naiveAlgorithm.apply(negativeDivisor, limit);
+		var negativeDivisorOptimal = optimalAlgorithm.apply(negativeDivisor, limit);
+		var zeroDivisorNaive = naiveAlgorithm.apply(zeroDivisor, limit);
+		var zeroDivisorOptimal = optimalAlgorithm.apply(zeroDivisor, limit);
 
 		// then
 		assertThat(negativeDivisorNaive, is(OptionalInt.empty()));
@@ -53,10 +56,10 @@ class SolutionsTests {
 		var zeroLimit = 0;
 
 		// when
-		var negativeLimitNaive = new NaiveSolution().apply(divisors, negativeLimit);
-		var negativeLimitOptimal = new OptimalSolution().apply(divisors, negativeLimit);
-		var zeroLimitNaive = new NaiveSolution().apply(divisors, zeroLimit);
-		var zeroLimitOptimal = new OptimalSolution().apply(divisors, zeroLimit);
+		var negativeLimitNaive = naiveAlgorithm.apply(divisors, negativeLimit);
+		var negativeLimitOptimal = optimalAlgorithm.apply(divisors, negativeLimit);
+		var zeroLimitNaive = naiveAlgorithm.apply(divisors, zeroLimit);
+		var zeroLimitOptimal = optimalAlgorithm.apply(divisors, zeroLimit);
 
 		// then
 		assertThat(negativeLimitNaive, is(OptionalInt.empty()));
@@ -72,8 +75,8 @@ class SolutionsTests {
 		var limit = 1;
 
 		// when
-		var naiveSolution = new NaiveSolution().apply(divisors, limit);
-		var optimalSolution = new OptimalSolution().apply(divisors, limit);
+		var naiveSolution = naiveAlgorithm.apply(divisors, limit);
+		var optimalSolution = optimalAlgorithm.apply(divisors, limit);
 
 		// then
 		assertThat(naiveSolution, is(equalTo(OptionalInt.of(0))));
@@ -87,8 +90,8 @@ class SolutionsTests {
 		var limit = 2;
 
 		// when
-		var naiveSolution = new NaiveSolution().apply(divisors, limit);
-		var optimalSolution = new OptimalSolution().apply(divisors, limit);
+		var naiveSolution = naiveAlgorithm.apply(divisors, limit);
+		var optimalSolution = optimalAlgorithm.apply(divisors, limit);
 
 		// then
 		assertThat(naiveSolution, is(equalTo(OptionalInt.of(1))));
@@ -102,8 +105,8 @@ class SolutionsTests {
 		var limit = 10;
 
 		// when
-		var naiveSolution = new NaiveSolution().apply(divisors, limit);
-		var optimalSolution = new OptimalSolution().apply(divisors, limit);
+		var naiveSolution = naiveAlgorithm.apply(divisors, limit);
+		var optimalSolution = optimalAlgorithm.apply(divisors, limit);
 
 		// then
 		assertThat(naiveSolution, is(equalTo(OptionalInt.of(23))));
