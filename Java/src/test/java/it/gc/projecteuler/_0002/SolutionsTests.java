@@ -50,9 +50,13 @@ class SolutionsTests {
 
 		// when
 		var nullTakeWhileNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
+		var nullTakeWhileHopping = OptimalSolutions.hopping(takeWhile);
+		var nullTakeWhileEvenSequence = OptimalSolutions.evenSequence(takeWhile);
 
 		// then
 		assertThat(nullTakeWhileNaive, is(OptionalInt.empty()));
+		assertThat(nullTakeWhileHopping, is(OptionalInt.empty()));
+		assertThat(nullTakeWhileEvenSequence, is(OptionalInt.empty()));
 	}
 
 	@Test
@@ -64,9 +68,13 @@ class SolutionsTests {
 
 		// when
 		var falseTakeWhileNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
+		var falseTakeWhileHopping = OptimalSolutions.hopping(takeWhile);
+		var falseTakeWhileEvenSequence = OptimalSolutions.evenSequence(takeWhile);
 
 		// then
 		assertThat(falseTakeWhileNaive, is(OptionalInt.of(0)));
+		assertThat(falseTakeWhileHopping, is(OptionalInt.of(0)));
+		assertThat(falseTakeWhileEvenSequence, is(OptionalInt.of(0)));
 	}
 
 	@Test
@@ -106,9 +114,13 @@ class SolutionsTests {
 
 		// when
 		var naiveSolution = naiveAlgorithm.apply(sequence, takeWhile, filter);
+		var hoppingSolution = OptimalSolutions.hopping(takeWhile);
+		var evenSequenceSolution = OptimalSolutions.evenSequence(takeWhile);
 
 		// then
 		assertThat(naiveSolution, is(equalTo(OptionalInt.of(44))));
+		assertThat(hoppingSolution, is(equalTo(OptionalInt.of(44))));
+		assertThat(evenSequenceSolution, is(equalTo(OptionalInt.of(44))));
 	}
 
 	@Test
