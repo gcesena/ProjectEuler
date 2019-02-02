@@ -1,5 +1,7 @@
 package it.gc.projecteuler._0003;
 
+import it.gc.projecteuler.utils.Tuple;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalLong;
@@ -13,8 +15,8 @@ public class NaiveSolution implements Solution {
 
 		while (number > 1) {
 			var tuple = factorOneStep(number);
-			factors.add(tuple.factor);
-			number = tuple.newNumber;
+			factors.add(tuple.left);
+			number = tuple.right;
 		}
 
 		return factors
@@ -23,26 +25,12 @@ public class NaiveSolution implements Solution {
 				.max();
 	}
 
-	private static Tuple factorOneStep(long number) {
+	private static Tuple<Long, Long> factorOneStep(long number) {
 		for (var i = 2L; i < number; i++) {
 			if (number % i == 0) {
 				return Tuple.of(i, number / i);
 			}
 		}
-		return Tuple.of(number, 1);
-	}
-
-	private static class Tuple {
-		final long factor;
-		final long newNumber;
-
-		private Tuple(long factor, long newNumber) {
-			this.factor = factor;
-			this.newNumber = newNumber;
-		}
-
-		static Tuple of(long factor, long newNumber) {
-			return new Tuple(factor, newNumber);
-		}
+		return Tuple.of(number, 1L);
 	}
 }
