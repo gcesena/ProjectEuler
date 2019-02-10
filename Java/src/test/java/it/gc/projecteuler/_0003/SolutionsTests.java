@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.is;
 
 class SolutionsTests {
 	private final Solution naiveAlgorithm = new NaiveSolution();
+	private final Solution optimalAlgorithm = new OptimalSolution();
 
 	@Test
 	void nonPositiveNumber() {
@@ -19,10 +20,14 @@ class SolutionsTests {
 		// when
 		var negativeNumberNaive = naiveAlgorithm.apply(negativeNumber);
 		var zeroNumberNaive = naiveAlgorithm.apply(zeroNumber);
+		var negativeNumberOptimal = optimalAlgorithm.apply(negativeNumber);
+		var zeroNumberOptimal = optimalAlgorithm.apply(zeroNumber);
 
 		// then
 		assertThat(negativeNumberNaive, is(OptionalLong.empty()));
 		assertThat(zeroNumberNaive, is(OptionalLong.empty()));
+		assertThat(negativeNumberOptimal, is(OptionalLong.empty()));
+		assertThat(zeroNumberOptimal, is(OptionalLong.empty()));
 	}
 
 	@Test
@@ -34,9 +39,13 @@ class SolutionsTests {
 		// when
 		var oneNumberNaive = naiveAlgorithm.apply(oneNumber);
 		var otherNumberNaive = naiveAlgorithm.apply(otherNumber);
+		var oneNumberOptimal = optimalAlgorithm.apply(oneNumber);
+		var otherNumberOptimal = optimalAlgorithm.apply(otherNumber);
 
 		// then
 		assertThat(oneNumberNaive, is(OptionalLong.of(1)));
 		assertThat(otherNumberNaive, is(OptionalLong.of(29)));
+		assertThat(oneNumberOptimal, is(OptionalLong.of(1)));
+		assertThat(otherNumberOptimal, is(OptionalLong.of(29)));
 	}
 }
