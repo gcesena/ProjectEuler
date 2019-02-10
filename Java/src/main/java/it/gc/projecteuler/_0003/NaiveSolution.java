@@ -13,10 +13,11 @@ public class NaiveSolution implements Solution {
 
 		var factors = new ArrayList<>(List.of(1L));
 
-		while (number > 1) {
-			var tuple = factorOneStep(number);
-			factors.add(tuple.left);
+		for (var i = 2L; number > 1; ) {
+			var tuple = factorOneStep(number, i);
 			number = tuple.right;
+			factors.add(tuple.left);
+			i = tuple.left;
 		}
 
 		return factors
@@ -25,8 +26,8 @@ public class NaiveSolution implements Solution {
 				.max();
 	}
 
-	private static Tuple<Long, Long> factorOneStep(long number) {
-		for (var i = 2L; i < number; i++) {
+	private static Tuple<Long, Long> factorOneStep(long number, long i) {
+		for (; i < number; i++) {
 			if (number % i == 0) {
 				return Tuple.of(i, number / i);
 			}
