@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.OptionalLong;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 class SolutionsTests {
@@ -24,10 +25,10 @@ class SolutionsTests {
 		var zeroNumberOptimal = optimalAlgorithm.apply(zeroNumber);
 
 		// then
-		assertThat(negativeNumberNaive, is(OptionalLong.empty()));
-		assertThat(zeroNumberNaive, is(OptionalLong.empty()));
-		assertThat(negativeNumberOptimal, is(OptionalLong.empty()));
-		assertThat(zeroNumberOptimal, is(OptionalLong.empty()));
+		assertThat(negativeNumberNaive, is(equalTo(OptionalLong.empty())));
+		assertThat(zeroNumberNaive, is(equalTo(OptionalLong.empty())));
+		assertThat(negativeNumberOptimal, is(equalTo(OptionalLong.empty())));
+		assertThat(zeroNumberOptimal, is(equalTo(OptionalLong.empty())));
 	}
 
 	@Test
@@ -43,9 +44,9 @@ class SolutionsTests {
 		var otherNumberOptimal = optimalAlgorithm.apply(otherNumber);
 
 		// then
-		assertThat(oneNumberNaive, is(OptionalLong.of(1)));
-		assertThat(otherNumberNaive, is(OptionalLong.of(29)));
-		assertThat(oneNumberOptimal, is(OptionalLong.of(1)));
-		assertThat(otherNumberOptimal, is(OptionalLong.of(29)));
+		assertThat(oneNumberNaive, is(equalTo(OptionalLong.of(1))));
+		assertThat(otherNumberNaive, is(equalTo(OptionalLong.of(29))));
+		assertThat(oneNumberOptimal, is(equalTo(OptionalLong.of(1))));
+		assertThat(otherNumberOptimal, is(equalTo(OptionalLong.of(29))));
 	}
 }

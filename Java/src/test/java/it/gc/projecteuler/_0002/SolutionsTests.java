@@ -24,7 +24,7 @@ class SolutionsTests {
 		var nullSequenceNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
 
 		// then
-		assertThat(nullSequenceNaive, is(OptionalInt.empty()));
+		assertThat(nullSequenceNaive, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
@@ -38,7 +38,7 @@ class SolutionsTests {
 		var emptySequenceNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
 
 		// then
-		assertThat(emptySequenceNaive, is(OptionalInt.of(0)));
+		assertThat(emptySequenceNaive, is(equalTo(OptionalInt.of(0))));
 	}
 
 	@Test
@@ -54,9 +54,9 @@ class SolutionsTests {
 		var nullTakeWhileEvenSequence = OptimalSolutions.evenSequence(takeWhile);
 
 		// then
-		assertThat(nullTakeWhileNaive, is(OptionalInt.empty()));
-		assertThat(nullTakeWhileHopping, is(OptionalInt.empty()));
-		assertThat(nullTakeWhileEvenSequence, is(OptionalInt.empty()));
+		assertThat(nullTakeWhileNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(nullTakeWhileHopping, is(equalTo(OptionalInt.empty())));
+		assertThat(nullTakeWhileEvenSequence, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
@@ -72,9 +72,9 @@ class SolutionsTests {
 		var falseTakeWhileEvenSequence = OptimalSolutions.evenSequence(takeWhile);
 
 		// then
-		assertThat(falseTakeWhileNaive, is(OptionalInt.of(0)));
-		assertThat(falseTakeWhileHopping, is(OptionalInt.of(0)));
-		assertThat(falseTakeWhileEvenSequence, is(OptionalInt.of(0)));
+		assertThat(falseTakeWhileNaive, is(equalTo(OptionalInt.of(0))));
+		assertThat(falseTakeWhileHopping, is(equalTo(OptionalInt.of(0))));
+		assertThat(falseTakeWhileEvenSequence, is(equalTo(OptionalInt.of(0))));
 	}
 
 	@Test
@@ -88,7 +88,7 @@ class SolutionsTests {
 		var nullFilterNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
 
 		// then
-		assertThat(nullFilterNaive, is(OptionalInt.empty()));
+		assertThat(nullFilterNaive, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
@@ -102,7 +102,7 @@ class SolutionsTests {
 		var falseFilterNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
 
 		// then
-		assertThat(falseFilterNaive, is(OptionalInt.of(0)));
+		assertThat(falseFilterNaive, is(equalTo(OptionalInt.of(0))));
 	}
 
 	@Test

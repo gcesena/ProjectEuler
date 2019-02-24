@@ -24,8 +24,8 @@ class SolutionsTests {
 		var noDivisorsOptimal = optimalAlgorithm.apply(noDivisors, limit);
 
 		// then
-		assertThat(noDivisorsNaive, is(OptionalInt.empty()));
-		assertThat(noDivisorsOptimal, is(OptionalInt.empty()));
+		assertThat(noDivisorsNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(noDivisorsOptimal, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
@@ -42,10 +42,10 @@ class SolutionsTests {
 		var zeroDivisorOptimal = optimalAlgorithm.apply(zeroDivisor, limit);
 
 		// then
-		assertThat(negativeDivisorNaive, is(OptionalInt.empty()));
-		assertThat(negativeDivisorOptimal, is(OptionalInt.empty()));
-		assertThat(zeroDivisorNaive, is(OptionalInt.empty()));
-		assertThat(zeroDivisorOptimal, is(OptionalInt.empty()));
+		assertThat(negativeDivisorNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(negativeDivisorOptimal, is(equalTo(OptionalInt.empty())));
+		assertThat(zeroDivisorNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(zeroDivisorOptimal, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
@@ -62,10 +62,10 @@ class SolutionsTests {
 		var zeroLimitOptimal = optimalAlgorithm.apply(divisors, zeroLimit);
 
 		// then
-		assertThat(negativeLimitNaive, is(OptionalInt.empty()));
-		assertThat(negativeLimitOptimal, is(OptionalInt.empty()));
-		assertThat(zeroLimitNaive, is(OptionalInt.empty()));
-		assertThat(zeroLimitOptimal, is(OptionalInt.empty()));
+		assertThat(negativeLimitNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(negativeLimitOptimal, is(equalTo(OptionalInt.empty())));
+		assertThat(zeroLimitNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(zeroLimitOptimal, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
