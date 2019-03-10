@@ -9,7 +9,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 class SolutionsTests {
-	private NaiveSolution naiveAlgorithm = new NaiveSolution();
+	private Solution naiveAlgorithm = new NaiveSolution();
+	private Solution optimalAlgorithm = new OptimalSolution();
 
 	@Test
 	void nonPositiveLimit() {
@@ -19,11 +20,15 @@ class SolutionsTests {
 
 		// when
 		var negativeLimitNaive = naiveAlgorithm.apply(negativeLimit);
+		var negativeLimitOptimal = optimalAlgorithm.apply(negativeLimit);
 		var zeroLimitNaive = naiveAlgorithm.apply(zeroLimit);
+		var zeroLimitOptimal = optimalAlgorithm.apply(zeroLimit);
 
 		// then
 		assertThat(negativeLimitNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(negativeLimitOptimal, is(equalTo(OptionalInt.empty())));
 		assertThat(zeroLimitNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(zeroLimitOptimal, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
@@ -33,9 +38,11 @@ class SolutionsTests {
 
 		// when
 		var multipleNaive = naiveAlgorithm.apply(limit);
+		var multipleOptimal = optimalAlgorithm.apply(limit);
 
 		// then
 		assertThat(multipleNaive, is(equalTo(OptionalInt.of(1))));
+		assertThat(multipleOptimal, is(equalTo(OptionalInt.of(1))));
 	}
 
 	@Test
@@ -45,9 +52,11 @@ class SolutionsTests {
 
 		// when
 		var multipleNaive = naiveAlgorithm.apply(limit);
+		var multipleOptimal = optimalAlgorithm.apply(limit);
 
 		// then
 		assertThat(multipleNaive, is(equalTo(OptionalInt.of(2))));
+		assertThat(multipleOptimal, is(equalTo(OptionalInt.of(2))));
 	}
 
 	@Test
@@ -57,8 +66,10 @@ class SolutionsTests {
 
 		// when
 		var multipleNaive = naiveAlgorithm.apply(limit);
+		var multipleOptimal = optimalAlgorithm.apply(limit);
 
 		// then
 		assertThat(multipleNaive, is(equalTo(OptionalInt.of(2520))));
+		assertThat(multipleOptimal, is(equalTo(OptionalInt.of(2520))));
 	}
 }
