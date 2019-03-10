@@ -1,5 +1,6 @@
 package it.gc.projecteuler._0002;
 
+import it.gc.projecteuler.sequence.FibonacciSequence;
 import org.junit.jupiter.api.Test;
 
 import java.util.OptionalInt;

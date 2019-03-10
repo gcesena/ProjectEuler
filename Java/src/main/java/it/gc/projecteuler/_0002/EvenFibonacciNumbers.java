@@ -1,5 +1,7 @@
 package it.gc.projecteuler._0002;
 
+import it.gc.projecteuler.sequence.FibonacciSequence;
+
 import java.util.function.IntPredicate;
 
 public class EvenFibonacciNumbers {

@@ -1,5 +1,8 @@
 package it.gc.projecteuler._0002;
 
+import it.gc.projecteuler.sequence.EvenFibonacciSequence;
+import it.gc.projecteuler.sequence.FibonacciSequence;
+
 import java.util.OptionalInt;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;

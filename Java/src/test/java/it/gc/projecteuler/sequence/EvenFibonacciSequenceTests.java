@@ -1,4 +1,4 @@
-package it.gc.projecteuler._0002;
+package it.gc.projecteuler.sequence;
 
 import org.junit.jupiter.api.Test;
 

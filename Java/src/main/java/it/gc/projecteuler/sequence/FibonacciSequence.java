@@ -1,4 +1,4 @@
-package it.gc.projecteuler._0002;
+package it.gc.projecteuler.sequence;
 
 import it.gc.projecteuler.util.Tuple;
 
@@ -9,7 +9,7 @@ public final class FibonacciSequence {
 	private FibonacciSequence() {
 	}
 
-	static IntStream build() {
+	public static IntStream build() {
 		return Stream
 				.iterate(Tuple.of(0, 1), prev -> Tuple.of(prev.right, prev.left + prev.right))
 				.mapToInt(tuple -> tuple.left);
