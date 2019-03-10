@@ -1,6 +1,6 @@
 package it.gc.projecteuler._0003;
 
-import it.gc.projecteuler.util.Tuple;
+import it.gc.projecteuler.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +19,10 @@ public class OptimalSolution implements Solution {
 		}
 
 		for (var i = 3L; number > 1; ) {
-			var tuple = factorOneStep(number, i);
-			number = tuple.right;
-			factors.add(tuple.left);
-			i = tuple.left;
+			var pair = factorOneStep(number, i);
+			number = pair.right;
+			factors.add(pair.left);
+			i = pair.left;
 		}
 
 		return factors
@@ -39,12 +39,12 @@ public class OptimalSolution implements Solution {
 		return number >> 1;
 	}
 
-	private static Tuple<Long, Long> factorOneStep(long number, long i) {
+	private static Pair<Long, Long> factorOneStep(long number, long i) {
 		for (var squareRoot = (long) Math.sqrt(number); i <= squareRoot; i++) {
 			if (number % i == 0) {
-				return Tuple.of(i, number / i);
+				return Pair.of(i, number / i);
 			}
 		}
-		return Tuple.of(number, 1L);
+		return Pair.of(number, 1L);
 	}
 }
