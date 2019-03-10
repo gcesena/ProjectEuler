@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 class SolutionsTests {
-	private NaiveSolution naiveAlgorithm = new NaiveSolution();
+	private Solution naiveAlgorithm = new NaiveSolution();
 
 	@Test
 	void nonPositiveDigits() {
