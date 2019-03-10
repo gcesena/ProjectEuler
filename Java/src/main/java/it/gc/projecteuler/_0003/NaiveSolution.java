@@ -1,6 +1,6 @@
 package it.gc.projecteuler._0003;
 
-import it.gc.projecteuler.utils.Tuple;
+import it.gc.projecteuler.util.Tuple;
 
 import java.util.ArrayList;
 import java.util.List;

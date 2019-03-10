@@ -1,6 +1,6 @@
 package it.gc.projecteuler._0002;
 
-import it.gc.projecteuler.utils.Tuple;
+import it.gc.projecteuler.util.Tuple;
 
 import java.util.stream.IntStream;
 import java.util.stream.Stream;

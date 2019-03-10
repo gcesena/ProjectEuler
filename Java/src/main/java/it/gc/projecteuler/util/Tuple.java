@@ -1,4 +1,4 @@
-package it.gc.projecteuler.utils;
+package it.gc.projecteuler.util;
 
 public class Tuple<L, R> {
 	public final L left;
