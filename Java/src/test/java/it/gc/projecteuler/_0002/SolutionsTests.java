@@ -1,6 +1,7 @@
 package it.gc.projecteuler._0002;
 
 import it.gc.projecteuler.sequence.FibonacciSequence;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.OptionalInt;
@@ -11,6 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
+@DisplayName("EvenFibonacciNumbers")
 class SolutionsTests {
 	private final Solution naiveAlgorithm = new NaiveSolution();
 

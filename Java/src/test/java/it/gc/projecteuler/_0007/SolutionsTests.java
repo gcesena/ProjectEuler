@@ -1,5 +1,6 @@
 package it.gc.projecteuler._0007;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.OptionalInt;
@@ -8,6 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
+@DisplayName("TenThousandFirstPrime")
 class SolutionsTests {
 	private Solution naiveAlgorithm = new NaiveSolution();
 	private Solution optimalAlgorithm = new OptimalSolution();

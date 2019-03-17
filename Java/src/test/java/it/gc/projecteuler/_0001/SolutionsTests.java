@@ -1,5 +1,6 @@
 package it.gc.projecteuler._0001;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.OptionalInt;
@@ -9,6 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
+@DisplayName("MultiplesOf3And5")
 class SolutionsTests {
 	private final Solution naiveAlgorithm = new NaiveSolution();
 	private final Solution optimalAlgorithm = new OptimalSolution();

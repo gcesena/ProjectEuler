@@ -1,5 +1,6 @@
 package it.gc.projecteuler._0004;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -8,6 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
+@DisplayName("LargestPalindromeProduct")
 class SolutionsTests {
 	private Solution naiveAlgorithm = new NaiveSolution();
 

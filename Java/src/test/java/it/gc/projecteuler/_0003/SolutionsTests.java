@@ -1,5 +1,6 @@
 package it.gc.projecteuler._0003;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.OptionalLong;
@@ -8,6 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
+@DisplayName("LargestPrimeFactor")
 class SolutionsTests {
 	private final Solution naiveAlgorithm = new NaiveSolution();
 	private final Solution optimalAlgorithm = new OptimalSolution();
