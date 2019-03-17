@@ -10,6 +10,7 @@ import static org.hamcrest.Matchers.is;
 
 class SolutionsTests {
 	private Solution naiveAlgorithm = new NaiveSolution();
+	private Solution optimalAlgorithm = new OptimalSolution();
 
 	@Test
 	void nonPositiveIndex() {
@@ -19,11 +20,15 @@ class SolutionsTests {
 
 		// when
 		var negativeIndexNaive = naiveAlgorithm.apply(negativeIndex);
+		var negativeIndexOptimal = optimalAlgorithm.apply(negativeIndex);
 		var zeroIndexNaive = naiveAlgorithm.apply(zeroIndex);
+		var zeroIndexOptimal = optimalAlgorithm.apply(zeroIndex);
 
 		// then
 		assertThat(negativeIndexNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(negativeIndexOptimal, is(equalTo(OptionalInt.empty())));
 		assertThat(zeroIndexNaive, is(equalTo(OptionalInt.empty())));
+		assertThat(zeroIndexOptimal, is(equalTo(OptionalInt.empty())));
 	}
 
 	@Test
@@ -33,9 +38,11 @@ class SolutionsTests {
 
 		// when
 		var primeNaive = naiveAlgorithm.apply(index);
+		var primeOptimal = optimalAlgorithm.apply(index);
 
 		// then
 		assertThat(primeNaive, is(equalTo(OptionalInt.of(2))));
+		assertThat(primeOptimal, is(equalTo(OptionalInt.of(2))));
 	}
 
 	@Test
@@ -45,8 +52,10 @@ class SolutionsTests {
 
 		// when
 		var primeNaive = naiveAlgorithm.apply(index);
+		var primeOptimal = naiveAlgorithm.apply(index);
 
 		// then
 		assertThat(primeNaive, is(equalTo(OptionalInt.of(13))));
+		assertThat(primeOptimal, is(equalTo(OptionalInt.of(13))));
 	}
 }

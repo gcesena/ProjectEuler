@@ -3,7 +3,7 @@ package it.gc.projecteuler._0007;
 public class TenThousandFirstPrime {
 	public static void main(String[] args) {
 		var index = 10_001;
-		var algorithm = new NaiveSolution();
+		var algorithm = new OptimalSolution();
 
 		System.out.println(algorithm.apply(index));
 	}
