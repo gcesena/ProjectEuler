@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.is;
 class SolutionsTests {
 	private final Solution naiveAlgorithm = new NaiveSolution();
 	private final Solution optimalAlgorithm = new OptimalSolution();
-	
+
 	@Test
 	void noDivisors() {
 		// given

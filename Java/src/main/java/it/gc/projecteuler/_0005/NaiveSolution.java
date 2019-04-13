@@ -33,7 +33,7 @@ public class NaiveSolution implements Solution {
 		for (var i = limit - 1; i > 1; i--) {
 			final var candidate = i;
 			if (divisors.isEmpty() || divisors.stream().allMatch(divisor -> divisor % candidate != 0)) {
-				divisors.add(i);
+				divisors.add(candidate);
 			}
 		}
 

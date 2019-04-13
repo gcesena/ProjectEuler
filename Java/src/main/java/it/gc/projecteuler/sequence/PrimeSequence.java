@@ -15,7 +15,7 @@ public final class PrimeSequence {
 	public static IntStream memoryIntensive() {
 		return Stream
 				.iterate(Triple.of(new TreeSet<>(Set.of(2)), 2, 3), PrimeSequence::memoryIntensiveNext)
-				.mapToInt(tuple -> tuple.middle);
+				.mapToInt(triple -> triple.middle);
 	}
 
 	private static Triple<TreeSet<Integer>, Integer, Integer> memoryIntensiveNext(
@@ -34,7 +34,7 @@ public final class PrimeSequence {
 	public static IntStream processorIntensive() {
 		return Stream
 				.iterate(Pair.of(2, 3), PrimeSequence::processorIntensiveNext)
-				.mapToInt(prev -> prev.left);
+				.mapToInt(pair -> pair.left);
 	}
 
 	private static Pair<Integer, Integer> processorIntensiveNext(Pair<Integer, Integer> pair) {

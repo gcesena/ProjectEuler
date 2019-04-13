@@ -12,10 +12,10 @@ public class NaiveSolution implements Solution {
 		var limit = (int) Math.pow(radix, digits) - 1;
 		for (var i = limit; i > 0; i--) {
 			for (var j = limit; i <= j; j--) {
-				var result = i * j;
+				var candidate = i * j;
 
-				if ((product.result < result) && isPalindrome(Integer.toString(result, radix))) {
-					product = PalindromeProduct.of(radix, i, j, result);
+				if ((candidate > product.result) && isPalindrome(Integer.toString(candidate, radix))) {
+					product = PalindromeProduct.of(radix, i, j, candidate);
 				}
 			}
 		}

@@ -3,6 +3,7 @@ package it.gc.projecteuler.sequence;
 import it.gc.projecteuler.util.Pair;
 import it.gc.projecteuler.util.Triple;
 
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.IntStream;
@@ -24,7 +25,7 @@ public final class FastPrimeSequence {
 	private static Triple<TreeSet<Integer>, IntStream, Integer> memoryIntensiveNext(
 			Triple<TreeSet<Integer>, IntStream, Integer> triple) {
 		var primes = triple.left;
-		var candidates = new int[] { triple.right - 1, triple.right + 1 };
+		var candidates = List.of(triple.right - 1, triple.right + 1);
 		var results = new TreeSet<Integer>();
 
 		for (var candidate : candidates) {
@@ -48,7 +49,7 @@ public final class FastPrimeSequence {
 	}
 
 	private static Pair<IntStream, Integer> processorIntensiveNext(Pair<IntStream, Integer> pair) {
-		var candidates = new int[] { pair.right - 1, pair.right + 1 };
+		var candidates = List.of(pair.right - 1, pair.right + 1);
 		var results = new TreeSet<Integer>();
 
 		for (var candidate : candidates) {
