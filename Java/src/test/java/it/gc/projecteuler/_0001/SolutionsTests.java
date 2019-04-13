@@ -77,12 +77,12 @@ class SolutionsTests {
 		var limit = 1;
 
 		// when
-		var naiveSolution = naiveAlgorithm.apply(divisors, limit);
-		var optimalSolution = optimalAlgorithm.apply(divisors, limit);
+		var sumNaive = naiveAlgorithm.apply(divisors, limit);
+		var sumOptimal = optimalAlgorithm.apply(divisors, limit);
 
 		// then
-		assertThat(naiveSolution, is(equalTo(OptionalInt.of(0))));
-		assertThat(optimalSolution, is(equalTo(OptionalInt.of(0))));
+		assertThat(sumNaive, is(equalTo(OptionalInt.of(0))));
+		assertThat(sumOptimal, is(equalTo(OptionalInt.of(0))));
 	}
 
 	@Test
@@ -92,12 +92,12 @@ class SolutionsTests {
 		var limit = 2;
 
 		// when
-		var naiveSolution = naiveAlgorithm.apply(divisors, limit);
-		var optimalSolution = optimalAlgorithm.apply(divisors, limit);
+		var sumNaive = naiveAlgorithm.apply(divisors, limit);
+		var sumOptimal = optimalAlgorithm.apply(divisors, limit);
 
 		// then
-		assertThat(naiveSolution, is(equalTo(OptionalInt.of(1))));
-		assertThat(optimalSolution, is(equalTo(OptionalInt.of(1))));
+		assertThat(sumNaive, is(equalTo(OptionalInt.of(1))));
+		assertThat(sumOptimal, is(equalTo(OptionalInt.of(1))));
 	}
 
 	@Test
@@ -107,11 +107,11 @@ class SolutionsTests {
 		var limit = 10;
 
 		// when
-		var naiveSolution = naiveAlgorithm.apply(divisors, limit);
-		var optimalSolution = optimalAlgorithm.apply(divisors, limit);
+		var sumNaive = naiveAlgorithm.apply(divisors, limit);
+		var sumOptimal = optimalAlgorithm.apply(divisors, limit);
 
 		// then
-		assertThat(naiveSolution, is(equalTo(OptionalInt.of(23))));
-		assertThat(optimalSolution, is(equalTo(OptionalInt.of(23))));
+		assertThat(sumNaive, is(equalTo(OptionalInt.of(23))));
+		assertThat(sumOptimal, is(equalTo(OptionalInt.of(23))));
 	}
 }

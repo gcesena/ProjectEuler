@@ -116,14 +116,14 @@ class SolutionsTests {
 		IntPredicate filter = f -> f % 2 == 0;
 
 		// when
-		var naiveSolution = naiveAlgorithm.apply(sequence, takeWhile, filter);
-		var hoppingSolution = OptimalSolutions.hopping(takeWhile);
-		var evenSequenceSolution = OptimalSolutions.evenSequence(takeWhile);
+		var sumNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
+		var sumHopping = OptimalSolutions.hopping(takeWhile);
+		var sumEvenSequence = OptimalSolutions.evenSequence(takeWhile);
 
 		// then
-		assertThat(naiveSolution, is(equalTo(OptionalInt.of(44))));
-		assertThat(hoppingSolution, is(equalTo(OptionalInt.of(44))));
-		assertThat(evenSequenceSolution, is(equalTo(OptionalInt.of(44))));
+		assertThat(sumNaive, is(equalTo(OptionalInt.of(44))));
+		assertThat(sumHopping, is(equalTo(OptionalInt.of(44))));
+		assertThat(sumEvenSequence, is(equalTo(OptionalInt.of(44))));
 	}
 
 	@Test
@@ -134,9 +134,9 @@ class SolutionsTests {
 		IntPredicate filter = f -> f % 2 == 1;
 
 		// when
-		var naiveSolution = naiveAlgorithm.apply(sequence, takeWhile, filter);
+		var sumNaive = naiveAlgorithm.apply(sequence, takeWhile, filter);
 
 		// then
-		assertThat(naiveSolution, is(equalTo(OptionalInt.of(188))));
+		assertThat(sumNaive, is(equalTo(OptionalInt.of(188))));
 	}
 }
