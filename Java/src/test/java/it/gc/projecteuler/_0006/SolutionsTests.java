@@ -12,6 +12,7 @@ import static org.hamcrest.Matchers.is;
 @DisplayName("SumSquareDifference")
 class SolutionsTests {
 	private Solution naiveAlgorithm = new NaiveSolution();
+	private OptimalSolution optimalAlgorithm = new OptimalSolution();
 
 	@Test
 	void negativeLimit() {
@@ -21,9 +22,11 @@ class SolutionsTests {
 
 		// when
 		var negativeLimitNaive = naiveAlgorithm.apply(negativeLimit, exponent);
+		var negativeLimitOptimal = optimalAlgorithm.apply(negativeLimit);
 
 		// then
 		assertThat(negativeLimitNaive, is(equalTo(OptionalDouble.empty())));
+		assertThat(negativeLimitOptimal, is(equalTo(OptionalDouble.empty())));
 	}
 
 	@Test
@@ -34,9 +37,11 @@ class SolutionsTests {
 
 		// when
 		var differenceNaive = naiveAlgorithm.apply(limit, exponent);
+		var differenceOptimal = optimalAlgorithm.apply(limit);
 
 		// then
 		assertThat(differenceNaive, is(equalTo(OptionalDouble.of(0))));
+		assertThat(differenceOptimal, is(equalTo(OptionalDouble.of(0))));
 	}
 
 	@Test
@@ -73,8 +78,10 @@ class SolutionsTests {
 
 		// when
 		var differenceNaive = naiveAlgorithm.apply(limit, exponent);
+		var differenceOptimal = optimalAlgorithm.apply(limit);
 
 		// then
 		assertThat(differenceNaive, is(equalTo(OptionalDouble.of(2640))));
+		assertThat(differenceOptimal, is(equalTo(OptionalDouble.of(2640))));
 	}
 }
