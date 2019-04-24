@@ -8,11 +8,11 @@ public class NaiveSolution implements Solution {
 	public OptionalDouble apply(int limit, double exponent) {
 		if (!Solution.isValid(limit, exponent)) return OptionalDouble.empty();
 
-		var sumOfSquares = IntStream
+		var sumOfExponentiation = IntStream
 				.range(1, limit + 1)
 				.mapToDouble(i -> Math.pow(i, exponent))
 				.sum();
-		var squareOfSum = Math.pow(IntStream.range(1, limit + 1).sum(), exponent);
-		return OptionalDouble.of(squareOfSum - sumOfSquares);
+		var exponentiationOfSum = Math.pow(IntStream.range(1, limit + 1).sum(), exponent);
+		return OptionalDouble.of(exponentiationOfSum - sumOfExponentiation);
 	}
 }
