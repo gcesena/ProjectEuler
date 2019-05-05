@@ -1,6 +1,6 @@
 package it.gc.projecteuler._0004;
 
-/*
+/**
  * Why this problem only has the naïve algorithm.
  *
  * Because the very last solution, as given in the overview paper, is very specific: not only for the radix it can be
@@ -8,7 +8,6 @@ package it.gc.projecteuler._0004;
  *
  * Any implementation would be parameter-less, accompanied by a single trivial test and programmatically non interesting
  */
-
 public class LargestPalindromeProduct {
 	public static void main(String[] args) {
 		var digits = 3;

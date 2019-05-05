@@ -22,7 +22,7 @@ public class NaiveSolution implements Solution {
 		}
 	}
 
-	/*
+	/**
 	 * We prefer large numbers with multiple factors, so to reduce to the bare minimum the number of modulo operations
 	 * later on (e.g. being divisible by 20 also means to be divisible by 10, 5 and 2)
 	 */

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-/*
+/**
  * Another, hypothetical, way of solving this problem would be by replacing multiplications with additions; provided
  * that we:
  * <li> exclude all _adjacentDigits_ containing zeros; and
